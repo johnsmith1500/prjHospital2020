@@ -12,6 +12,7 @@ package prjHospital;
 public class Funcionario extends Pessoa{
     private int matricula;
     private String senha;
+    private double valorhora;
 
     public int getMatricula() {
         return matricula;
@@ -28,5 +29,23 @@ public class Funcionario extends Pessoa{
     public void setSenha(String senha) {
         this.senha = senha;
     }
-   
+    public double calcularSalario(){
+        double salario;
+        salario = valorhora * 30;
+        return salario;
+    }
+   public double calcularSalario(double desconto){
+       double salario;
+       double descontar;
+       salario = valorhora * 30;
+       descontar = salario - (salario *(desconto/100));
+       return descontar;
+   }
+   public double gerarBonus(){
+       double salario;
+       double bonus;
+       salario = valorhora * 30;
+       bonus = salario + (salario *(10/100));
+       return bonus;
+   }
 }

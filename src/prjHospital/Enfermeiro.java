@@ -11,6 +11,7 @@ package prjHospital;
  */
 public class Enfermeiro extends Funcionario{
     private String coren;
+    private double valorhora;
 
     public String getCoren() {
         return coren;
@@ -19,5 +20,16 @@ public class Enfermeiro extends Funcionario{
     public void setCoren(String coren) {
         this.coren = coren;
     }
-    
+     /**
+     *
+     * @return
+     */
+    @Override
+  public double gerarBonus(){
+       double salario;
+       double bonus;
+       salario = valorhora * 30;
+       bonus = salario + (salario *(20/100));
+       return bonus;
+   }
 }

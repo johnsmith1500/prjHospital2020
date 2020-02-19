@@ -12,6 +12,7 @@ package prjHospital;
 public class Medico extends Funcionario{
    private String crm;
    private String especialidade;
+   private double valorhora;
 
     public String getCrm() {
         return crm;
@@ -28,5 +29,16 @@ public class Medico extends Funcionario{
     public void setEspecialidade(String especialidade) {
         this.especialidade = especialidade;
     }
-   
+     /**
+     *
+     * @return
+     */
+    @Override
+   public double gerarBonus(){
+       double salario;
+       double bonus;
+       salario = valorhora * 30;
+       bonus = salario + (salario *(30/100));
+       return bonus;
+   }
 }
